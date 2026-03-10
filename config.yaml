@@ -1,0 +1,69 @@
+# ASTAR Configuration
+# Unified configuration for template induction, structuring, and evaluation
+
+# Experiment settings
+experiment_id: "exp_001"
+output_dir: "./output"
+
+# LLM Configuration
+# Supports any OpenAI-compatible API endpoint
+llm:
+  base_url: "https://api.openai.com/v1"  # Change to your API endpoint
+  model: "gpt-4o-mini"
+  embedding_model: "text-embedding-3-small"
+  temperature: 0.0
+  max_retries: 3
+  backoff_base: 10.0
+
+# Data Configuration
+data:
+  train_csv: "./data/train.csv"
+  test_csv: "./data/test.csv"
+  id_column: "report_id"
+  description_column: "description"
+  diagnosis_column: "diagnosis"
+
+# Stage I: Slot Induction
+induction:
+  span_clustering:
+    k_min: 50
+    k_max: 300
+    k_step: 10
+    max_reports: 100
+    max_workers: 16
+    batch_size: 256
+
+  slot_induction:
+    max_spans_per_cluster: 100
+    max_workers: 16
+    max_clusters: null  # null = process all
+
+  slot_merging:
+    max_workers: 16
+    max_families: null  # null = process all
+
+# Stage II: Template Assembly
+  skeleton:
+    num_sample_reports: 10
+
+  slot_assignment:
+    round1_max_workers: 16
+    round2_max_workers: 16
+
+# Stage III: Template Refinement
+  refinement:
+    max_workers: 16
+
+# Report Structuring
+structuring:
+  max_workers: 8
+  include_omega: true  # Include allowed values in prompts
+
+# Evaluation
+evaluation:
+  max_workers: 8
+  num_reports: 50  # Number of reports to evaluate
+  skip_bert: false  # Skip BERTScore (slow)
+  bert_models:
+    macbert: "hfl/chinese-macbert-base"
+    roberta: "hfl/chinese-roberta-wwm-ext"

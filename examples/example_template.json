@@ -1,0 +1,215 @@
+{
+  "desc": {
+    "fetus": {
+      "head": {
+        "_slots_core": [
+          {
+            "slot_id": "slot_fetal_bpd",
+            "k": "fetal_bpd",
+            "k_zh": "biparietal diameter",
+            "tau": "numerical",
+            "omega": ["<NUM>mm"]
+          },
+          {
+            "slot_id": "slot_fetal_hc",
+            "k": "fetal_hc",
+            "k_zh": "head circumference",
+            "tau": "numerical",
+            "omega": ["<NUM>mm"]
+          },
+          {
+            "slot_id": "slot_lateral_ventricle",
+            "k": "lateral_ventricle_width",
+            "k_zh": "lateral ventricle width",
+            "tau": "numerical",
+            "omega": ["<NUM>mm"]
+          }
+        ],
+        "_slots_extended": [
+          {
+            "slot_id": "slot_head_shape",
+            "k": "head_shape",
+            "k_zh": "head shape",
+            "tau": "categorical",
+            "omega": ["normal", "abnormal"]
+          }
+        ]
+      },
+      "face": {
+        "_slots_core": [
+          {
+            "slot_id": "slot_nasal_bone",
+            "k": "nasal_bone_present",
+            "k_zh": "nasal bone",
+            "tau": "categorical",
+            "omega": ["present", "absent", "unclear"]
+          },
+          {
+            "slot_id": "slot_lips",
+            "k": "lips_continuity",
+            "k_zh": "lips continuity",
+            "tau": "categorical",
+            "omega": ["continuous", "discontinuous"]
+          }
+        ]
+      },
+      "spine": {
+        "_slots_core": [
+          {
+            "slot_id": "slot_spine_alignment",
+            "k": "spine_alignment",
+            "k_zh": "spine alignment",
+            "tau": "categorical",
+            "omega": ["continuous", "discontinuous", "normal", "abnormal"]
+          }
+        ]
+      },
+      "heart": {
+        "_slots_core": [
+          {
+            "slot_id": "slot_four_chamber",
+            "k": "four_chamber_view",
+            "k_zh": "four chamber view",
+            "tau": "categorical",
+            "omega": ["normal", "abnormal"]
+          },
+          {
+            "slot_id": "slot_heart_rate",
+            "k": "heart_rate",
+            "k_zh": "heart rate",
+            "tau": "numerical",
+            "omega": ["<NUM>bpm"]
+          }
+        ]
+      },
+      "abdomen": {
+        "_slots_core": [
+          {
+            "slot_id": "slot_ac",
+            "k": "abdominal_circumference",
+            "k_zh": "abdominal circumference",
+            "tau": "numerical",
+            "omega": ["<NUM>mm"]
+          },
+          {
+            "slot_id": "slot_stomach_bubble",
+            "k": "stomach_bubble",
+            "k_zh": "stomach bubble",
+            "tau": "categorical",
+            "omega": ["visible", "not visible"]
+          }
+        ]
+      },
+      "limbs": {
+        "_slots_core": [
+          {
+            "slot_id": "slot_fl",
+            "k": "femur_length",
+            "k_zh": "femur length",
+            "tau": "numerical",
+            "omega": ["<NUM>mm"]
+          },
+          {
+            "slot_id": "slot_limb_visibility",
+            "k": "limbs_visible",
+            "k_zh": "limbs visibility",
+            "tau": "categorical",
+            "omega": ["all visible", "partially visible", "not visible"]
+          }
+        ]
+      }
+    },
+    "placenta": {
+      "_slots_core": [
+        {
+          "slot_id": "slot_placenta_location",
+          "k": "placenta_location",
+          "k_zh": "placenta location",
+          "tau": "categorical",
+          "omega": ["anterior", "posterior", "fundal", "lateral", "low-lying"]
+        },
+        {
+          "slot_id": "slot_placenta_grade",
+          "k": "placenta_grade",
+          "k_zh": "placenta grade",
+          "tau": "categorical",
+          "omega": ["0", "I", "II", "III", "0-I", "I-II", "II-III"]
+        },
+        {
+          "slot_id": "slot_placenta_thickness",
+          "k": "placenta_thickness",
+          "k_zh": "placenta thickness",
+          "tau": "numerical",
+          "omega": ["<NUM>mm"]
+        }
+      ]
+    },
+    "amniotic_fluid": {
+      "_slots_core": [
+        {
+          "slot_id": "slot_afi",
+          "k": "afi",
+          "k_zh": "amniotic fluid index",
+          "tau": "numerical",
+          "omega": ["<NUM>cm"]
+        },
+        {
+          "slot_id": "slot_af_status",
+          "k": "amniotic_fluid_status",
+          "k_zh": "amniotic fluid status",
+          "tau": "categorical",
+          "omega": ["normal", "oligohydramnios", "polyhydramnios"]
+        }
+      ]
+    },
+    "umbilical_cord": {
+      "_slots_core": [
+        {
+          "slot_id": "slot_cord_vessels",
+          "k": "cord_vessels",
+          "k_zh": "umbilical cord vessels",
+          "tau": "categorical",
+          "omega": ["three vessels", "two vessels", "single umbilical artery"]
+        }
+      ]
+    }
+  },
+  "diag": {
+    "primary_diagnosis": {
+      "_slots_core": [
+        {
+          "slot_id": "slot_pregnancy_status",
+          "k": "pregnancy_status",
+          "k_zh": "pregnancy status",
+          "tau": "categorical",
+          "omega": ["single live intrauterine pregnancy", "twin pregnancy", "no fetal heartbeat"]
+        },
+        {
+          "slot_id": "slot_gestational_age",
+          "k": "gestational_age_weeks",
+          "k_zh": "gestational age",
+          "tau": "numerical",
+          "omega": ["<NUM> weeks"]
+        }
+      ]
+    },
+    "findings": {
+      "_slots_extended": [
+        {
+          "slot_id": "slot_abnormalities",
+          "k": "abnormalities_noted",
+          "k_zh": "abnormalities",
+          "tau": "freetext",
+          "omega": []
+        },
+        {
+          "slot_id": "slot_recommendations",
+          "k": "recommendations",
+          "k_zh": "recommendations",
+          "tau": "freetext",
+          "omega": []
+        }
+      ]
+    }
+  }
+}
