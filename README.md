@@ -12,7 +12,7 @@ Given a corpus of free-text reports, ASTAR:
 This design removes the need for manual template engineering and makes it easier to adapt structured reporting to new medical domains.
 
 <p align="center">
-  <img src="assets/astar_method_overview.svg" alt="ASTAR method overview" width="900"/>
+  <img src="assets/astar_method_overview.png" alt="ASTAR method overview" width="900"/>
 </p>
 
 **Input:** free-text medical reports  
@@ -99,7 +99,7 @@ After template induction, ASTAR produces a final hierarchical template (`templat
 ### Example Template Visualization
 A simplified visualization of the induced template is shown below. This figure presents only a compact subset of the final hierarchical template for readability.
 <p align="center">
-  <img src="assets/example_result.png" alt="ASTAR template example" width="900"/>
+  <img src="assets/example_result.png" alt="ASTAR template example" width="600"/>
 </p>
 
 
