@@ -1,6 +1,22 @@
 # ASTAR: Automatic Template Induction for Medical Report Structuring
+> ASTAR automatically induces standardized reporting templates from large-scale free-text medical corpora, replacing labor-intensive manual template design with a scalable data-driven pipeline.
+## Overview
 
-ASTAR is a three-stage pipeline for automatic template induction from medical reports. Given a collection of free-text medical reports, ASTAR induces a structured template that captures the key clinical concepts, then uses this template to structure new reports.
+ASTAR is a three-stage framework for automatically inducing structured reporting templates from large-scale free-text medical reports.
+
+Given a corpus of free-text reports, ASTAR:
+1. builds a canonical concept slot library,
+2. organizes slots into a hierarchical template tree,
+3. refines the template into a standardized final schema.
+
+This design removes the need for manual template engineering and makes it easier to adapt structured reporting to new medical domains.
+
+<p align="center">
+  <img src="assets/astar_method_overview.svg" alt="ASTAR method overview" width="900"/>
+</p>
+
+**Input:** free-text medical reports  
+**Output:** a hierarchical structured template that can be used to organize new reports
 
 ## Features
 
@@ -76,39 +92,16 @@ astar-eval \
 astar-eval ... --skip_bert
 ```
 
-## Pipeline Overview
+## Result Preview
 
-### Stage I: Slot Induction (Steps 0-2)
+After template induction, ASTAR produces a final hierarchical template (`template_final.json`) that organizes clinical findings into anatomical and semantic groups.
 
-1. **Step 0 - Span Clustering**: Extract clinical concept spans from reports and cluster them
-2. **Step 1 - Slot Induction**: Refine clusters to induce normalized slots (k, tau, omega)
-3. **Step 2 - Slot Merging**: Globally merge slots by key name
+### Example Template Visualization
+A simplified visualization of the induced template is shown below. This figure presents only a compact subset of the final hierarchical template for readability.
+<p align="center">
+  <img src="assets/example_result.png" alt="ASTAR template example" width="900"/>
+</p>
 
-### Stage II: Template Assembly (Steps 3-5)
-
-4. **Step 3 - Skeleton Building**: Induce high-level structure from sample reports
-5. **Step 4 - Slot Assignment**: Mount slots onto the skeleton (two-round process)
-6. **Step 5 - Tree Assembly**: Merge skeleton and slots into complete template
-
-### Stage III: Template Refinement (Step 6)
-
-7. **Step 6 - Refinement**: Intra-node reorganization and global harmonization
-
-## Output Files
-
-After running the pipeline, the output directory contains:
-
-```
-output/exp_001/
-├── spans_with_cluster.jsonl     # Step 0: Extracted spans
-├── induced_slots_step1.jsonl    # Step 1: Induced slots
-├── slot_catalog.jsonl           # Step 2: Merged slots
-├── template_skeleton.json       # Step 3: Structure skeleton
-├── template_skeleton_updated.json  # Step 4: Updated skeleton
-├── slot_assignments.jsonl       # Step 4: Slot assignments
-├── template_with_slots.json     # Step 5: Template with slots
-└── template_final.json          # Step 6: Final refined template
-```
 
 ## Evaluation Metrics
 
@@ -117,41 +110,6 @@ output/exp_001/
 - **Text Similarity**: chrF, chrF++, BERTScore
 - **Diagnostic Fidelity**: PDA, KFP, CA
 
-## Project Structure
-
-```
-astar/
-├── astar/
-│   ├── core/           # Shared infrastructure
-│   │   ├── config.py   # Unified configuration
-│   │   ├── llm.py      # LLM API client
-│   │   └── utils.py    # File I/O utilities
-│   ├── induction/      # Template induction pipeline
-│   │   ├── step0_span_clustering.py
-│   │   ├── step1_slot_induction.py
-│   │   ├── step2_slot_merging.py
-│   │   ├── step3_skeleton.py
-│   │   ├── step4_slot_assignment.py
-│   │   ├── step5_tree_assembly.py
-│   │   ├── step6_refinement.py
-│   │   └── pipeline.py
-│   ├── structuring/    # Report structuring
-│   │   ├── structure.py
-│   │   └── template_utils.py
-│   └── evaluation/     # Evaluation suite
-│       ├── run_eval.py
-│       ├── reconstruct.py
-│       ├── template_quality.py
-│       ├── info_fidelity.py
-│       ├── text_similarity.py
-│       └── diag_fidelity.py
-├── examples/
-│   ├── example_report.csv
-│   └── example_template.json
-├── config.yaml
-├── pyproject.toml
-└── README.md
-```
 
 ## Configuration Reference
 
