@@ -1,0 +1,1157 @@
+{
+  "name": "Fetal MRI Report",
+  "version": "v1_fusion_production",
+  "children": [
+    {
+      "name": "General Assessment",
+      "type": "Section",
+      "children": [
+        {
+          "name": "Pregnancy Info",
+          "type": "Group",
+          "entities": [
+            {
+              "name": "Gestational Age",
+              "schema_ref": "General - GestationalAge",
+              "fields": [
+                {
+                  "key": "ga_weeks",
+                  "label": "孕周",
+                  "type": "Measurement",
+                  "unit": "weeks",
+                  "options": [],
+                  "source_mapping": ["妊娠", "孕周", "末次月经龄", "校正孕周"]
+                },
+                {
+                  "key": "ga_plus_days",
+                  "label": "孕周+天（可选）",
+                  "type": "Text",
+                  "unit": null,
+                  "options": [],
+                  "source_mapping": ["33+3", "30+6"]
+                }
+              ]
+            },
+            {
+              "name": "Pregnancy Type",
+              "schema_ref": "General - PregnancyType",
+              "fields": [
+                {
+                  "key": "pregnancy_type",
+                  "label": "妊娠类型",
+                  "type": "Enum",
+                  "unit": null,
+                  "options": [
+                    "Intrauterine_Singleton",
+                    "Intrauterine_Multiple",
+                    "Ectopic",
+                    "Unknown"
+                  ],
+                  "source_mapping": ["宫内妊娠", "单胎", "多胎"]
+                }
+              ]
+            },
+            {
+              "name": "Fetal Presentation",
+              "schema_ref": "General - FetalPosition",
+              "fields": [
+                {
+                  "key": "presentation",
+                  "label": "胎位",
+                  "type": "Enum",
+                  "unit": null,
+                  "options": [
+                    "Cephalic",
+                    "Breech",
+                    "Transverse",
+                    "Oblique",
+                    "Unknown"
+                  ],
+                  "source_mapping": ["头位", "臀位", "横位", "斜位"]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Maternal Structures",
+          "type": "Group",
+          "entities": [
+            {
+              "name": "Cervix",
+              "schema_ref": "Maternal - Cervix",
+              "fields": [
+                {
+                  "key": "cervical_length",
+                  "label": "宫颈管长度",
+                  "type": "Measurement",
+                  "unit": "cm",
+                  "options": [],
+                  "source_mapping": ["宫颈管长约", "宫颈管长度"]
+                },
+                {
+                  "key": "internal_os_status",
+                  "label": "宫颈内口",
+                  "type": "Enum",
+                  "unit": null,
+                  "options": ["Closed", "Dilated", "Indeterminate", "NotAssessed"],
+                  "source_mapping": ["宫颈内口", "扩张", "闭合"]
+                },
+                {
+                  "key": "internal_os_dilation_width",
+                  "label": "内口扩张宽度（如有）",
+                  "type": "Measurement",
+                  "unit": "cm",
+                  "options": [],
+                  "source_mapping": ["扩张宽度"]
+                },
+                {
+                  "key": "endocervical_bleeding",
+                  "label": "宫颈管内出血信号（如有）",
+                  "type": "Enum",
+                  "unit": null,
+                  "options": ["Absent", "Minimal", "Obvious", "NotAssessed"],
+                  "source_mapping": ["少许出血", "出血"]
+                }
+              ]
+            },
+            {
+              "name": "Incidental Maternal Findings",
+              "schema_ref": "Maternal - Incidental",
+              "fields": [
+                {
+                  "key": "maternal_incidental_findings",
+                  "label": "母体偶发所见（如肾积水/子宫肌瘤等）",
+                  "type": "Text",
+                  "unit": null,
+                  "options": [],
+                  "source_mapping": ["母体右肾积水", "子宫肌瘤"]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "name": "Brain",
+      "type": "Section",
+      "children": [
+        {
+          "name": "Brain Overall",
+          "type": "Group",
+          "entities": [
+            {
+              "name": "Overall Assessment",
+              "schema_ref": "Brain - Overall",
+              "fields": [
+                {
+                  "key": "overall_status",
+                  "label": "总体评估",
+                  "type": "Enum",
+                  "unit": null,
+                  "options": ["Normal", "Abnormal", "Indeterminate", "NotAssessed"],
+                  "source_mapping": ["未见明确异常", "考虑", "提示"]
+                },
+                {
+                  "key": "overall_comment",
+                  "label": "总体描述（可选）",
+                  "type": "Text",
+                  "unit": null,
+                  "options": [],
+                  "source_mapping": ["脑部结构未见明确异常", "余胎儿脑部未见明确异常"]
+                }
+              ]
+            }
+          ]
+        },
+
+        {
+          "name": "Fetal Biometry",
+          "type": "Group",
+          "entities": [
+            {
+              "name": "Cranial Biometry",
+              "schema_ref": "Brain - Biometry",
+              "fields": [
+                {
+                  "key": "bpd_brain",
+                  "label": "脑双顶径（BPD）",
+                  "type": "Measurement",
+                  "unit": "cm",
+                  "options": [],
+                  "source_mapping": ["脑双顶径"]
+                },
+                {
+                  "key": "bpd_skull",
+                  "label": "颅骨双顶径（BPD）",
+                  "type": "Measurement",
+                  "unit": "cm",
+                  "options": [],
+                  "source_mapping": ["颅骨双顶径", "骨双顶径"]
+                },
+                {
+                  "key": "fod_brain",
+                  "label": "脑额枕径（FOD）",
+                  "type": "Measurement",
+                  "unit": "cm",
+                  "options": [],
+                  "source_mapping": ["脑额枕径", "额枕径"]
+                },
+                {
+                  "key": "fod_skull",
+                  "label": "颅骨额枕径（FOD）",
+                  "type": "Measurement",
+                  "unit": "cm",
+                  "options": [],
+                  "source_mapping": ["颅骨额枕径", "骨额枕径"]
+                },
+                {
+                  "key": "head_circumference",
+                  "label": "头围（如有）",
+                  "type": "Measurement",
+                  "unit": "cm",
+                  "options": [],
+                  "source_mapping": ["头围"]
+                }
+              ]
+            }
+          ]
+        },
+
+        {
+          "name": "Cerebral Hemispheres & Parenchyma",
+          "type": "Group",
+          "entities": [
+            {
+              "name": "Cerebral Hemispheres",
+              "schema_ref": "Brain - CerebralHemispheres",
+              "fields": [
+                {
+                  "key": "symmetry",
+                  "label": "大脑半球对称性",
+                  "type": "Enum",
+                  "unit": null,
+                  "options": ["Symmetric", "Asymmetric", "Indeterminate", "NotAssessed"],
+                  "source_mapping": ["双侧大脑半球对称", "不对称"]
+                }
+              ]
+            },
+            {
+              "name": "Sulci and Gyri",
+              "schema_ref": "Brain - SulciGyri",
+              "fields": [
+                {
+                  "key": "sulci_gyral_development",
+                  "label": "脑沟回发育/显示",
+                  "type": "Enum",
+                  "unit": null,
+                  "options": ["Appropriate_for_GA", "Delayed", "Simplified", "NotAssessed"],
+                  "source_mapping": ["脑沟回显示", "显示明显", "较明显", "表浅", "偏少"]
+                },
+                {
+                  "key": "central_sulcus_visibility",
+                  "label": "中央沟可见性（如评估）",
+                  "type": "Enum",
+                  "unit": null,
+                  "options": ["Visible", "NotVisible", "Partial", "NotAssessed"],
+                  "source_mapping": ["中央沟可见", "中央沟显示", "尚未显示"]
+                }
+              ]
+            },
+            {
+              "name": "Brain Parenchyma",
+              "schema_ref": "Brain - Parenchyma",
+              "fields": [
+                {
+                  "key": "signal_status",
+                  "label": "脑实质信号",
+                  "type": "Enum",
+                  "unit": null,
+                  "options": ["Normal", "Abnormal", "Indeterminate", "NotAssessed"],
+                  "source_mapping": ["脑实质未见确切异常信号", "异常信号"]
+                },
+                {
+                  "key": "lamination",
+                  "label": "分层结构",
+                  "type": "Enum",
+                  "unit": null,
+                  "options": ["Clear", "Blurred", "Absent", "NotAssessed"],
+                  "source_mapping": ["分层结构清晰", "不清", "未见"]
+                },
+                {
+                  "key": "dwi_restriction",
+                  "label": "DWI弥散受限（如评估）",
+                  "type": "Enum",
+                  "unit": null,
+                  "options": ["None", "Present", "NotAssessed"],
+                  "source_mapping": ["DWI弥散受限", "弥散受限"]
+                },
+                {
+                  "key": "extra_axial_space",
+                  "label": "脑外间隙",
+                  "type": "Enum",
+                  "unit": null,
+                  "options": ["Normal", "MildlyWidened", "Widened", "NotAssessed"],
+                  "source_mapping": ["脑外间隙稍增宽", "额颞部脑外间隙稍增宽"]
+                }
+              ]
+            }
+          ]
+        },
+
+        {
+          "name": "Midline Structures",
+          "type": "Group",
+          "entities": [
+            {
+              "name": "Midline Alignment",
+              "schema_ref": "Brain - MidlineAlignment",
+              "fields": [
+                {
+                  "key": "midline_centered",
+                  "label": "脑中线结构",
+                  "type": "Enum",
+                  "unit": null,
+                  "options": ["Centered", "Shifted", "Indeterminate", "NotAssessed"],
+                  "source_mapping": ["脑中线结构居中", "偏移"]
+                }
+              ]
+            },
+            {
+              "name": "Cavum Septum Pellucidum (CSP)",
+              "schema_ref": "Brain - CSP",
+              "fields": [
+                {
+                  "key": "csp_visibility",
+                  "label": "透明隔/透明隔腔可见性",
+                  "type": "Enum",
+                  "unit": null,
+                  "options": ["Visible", "NotVisible", "Partial", "NotAssessed"],
+                  "source_mapping": ["透明隔显示", "透明隔显示完整", "未见显示"]
+                },
+                {
+                  "key": "csp_integrity",
+                  "label": "透明隔完整性",
+                  "type": "Enum",
+                  "unit": null,
+                  "options": ["Intact", "NotIntact", "Indeterminate", "NotAssessed"],
+                  "source_mapping": ["显示完整", "连续", "不完整"]
+                },
+                {
+                  "key": "csp_width",
+                  "label": "透明隔腔宽度（如有）",
+                  "type": "Measurement",
+                  "unit": "cm",
+                  "options": [],
+                  "source_mapping": ["透明隔腔宽约", "透明隔间腔宽约"]
+                }
+              ]
+            },
+            {
+              "name": "Corpus Callosum",
+              "schema_ref": "Brain - CorpusCallosum",
+              "fields": [
+                {
+                  "key": "cc_visualization",
+                  "label": "胼胝体可见性",
+                  "type": "Enum",
+                  "unit": null,
+                  "options": ["Visible", "Partial", "NotVisible", "NotAssessed"],
+                  "source_mapping": ["胼胝体显示", "未见确切显示"]
+                },
+                {
+                  "key": "cc_morphology",
+                  "label": "胼胝体形态",
+                  "type": "Enum",
+                  "unit": null,
+                  "options": ["Normal", "Dysgenesis", "Agenesis", "Indeterminate", "NotAssessed"],
+                  "source_mapping": ["形态未见明确异常", "缺如", "发育不良"]
+                },
+                {
+                  "key": "cc_length",
+                  "label": "胼胝体长度（如测量）",
+                  "type": "Measurement",
+                  "unit": "cm",
+                  "options": [],
+                  "source_mapping": ["长度", "前后径"]
+                }
+              ]
+            },
+            {
+              "name": "Olfactory System",
+              "schema_ref": "Brain - Olfactory",
+              "fields": [
+                {
+                  "key": "olfactory_visualization",
+                  "label": "嗅球/嗅沟显示",
+                  "type": "Enum",
+                  "unit": null,
+                  "options": ["Visible", "Partial", "NotVisible", "NotAssessed"],
+                  "source_mapping": ["嗅球及嗅沟显示", "可见", "不清"]
+                },
+                {
+                  "key": "olfactory_symmetry",
+                  "label": "嗅球/嗅沟对称性",
+                  "type": "Enum",
+                  "unit": null,
+                  "options": ["Symmetric", "Asymmetric", "Indeterminate", "NotAssessed"],
+                  "source_mapping": ["显示对称", "不对称"]
+                }
+              ]
+            },
+            {
+              "name": "Optic Chiasm",
+              "schema_ref": "Brain - OpticChiasm",
+              "fields": [
+                {
+                  "key": "optic_chiasm_visibility",
+                  "label": "视交叉可见性（如评估）",
+                  "type": "Enum",
+                  "unit": null,
+                  "options": ["Visible", "NotVisible", "NotAssessed"],
+                  "source_mapping": ["视交叉显示"]
+                }
+              ]
+            }
+          ]
+        },
+
+        {
+          "name": "Ventricular System",
+          "type": "Group",
+          "entities": [
+            {
+              "name": "Lateral Ventricles",
+              "schema_ref": "Brain - LateralVentricles",
+              "fields": [
+                {
+                  "key": "atrium_width_left",
+                  "label": "左侧侧脑室三角区宽度",
+                  "type": "Measurement",
+                  "unit": "cm",
+                  "options": [],
+                  "source_mapping": ["左侧脑室三角区宽约", "左侧侧脑室"]
+                },
+                {
+                  "key": "atrium_width_right",
+                  "label": "右侧侧脑室三角区宽度",
+                  "type": "Measurement",
+                  "unit": "cm",
+                  "options": [],
+                  "source_mapping": ["右侧脑室三角区宽约", "右侧侧脑室"]
+                },
+                {
+                  "key": "ventriculomegaly",
+                  "label": "侧脑室扩张分级",
+                  "type": "Enum",
+                  "unit": null,
+                  "options": ["Normal", "Mild", "Moderate", "Severe", "Indeterminate", "NotAssessed"],
+                  "source_mapping": ["轻度扩张", "未见扩张", "明显扩张", "增宽"]
+                }
+              ]
+            },
+            {
+              "name": "Third Ventricle",
+              "schema_ref": "Brain - ThirdVentricle",
+              "fields": [
+                {
+                  "key": "third_ventricle_dilation",
+                  "label": "第三脑室扩张",
+                  "type": "Enum",
+                  "unit": null,
+                  "options": ["Normal", "Dilated", "Indeterminate", "NotAssessed"],
+                  "source_mapping": ["第三脑室未见扩张", "第三脑室扩张"]
+                }
+              ]
+            },
+            {
+              "name": "Fourth Ventricle",
+              "schema_ref": "Brain - FourthVentricle",
+              "fields": [
+                {
+                  "key": "fourth_ventricle_dilation",
+                  "label": "第四脑室扩张",
+                  "type": "Enum",
+                  "unit": null,
+                  "options": ["Normal", "Dilated", "Indeterminate", "NotAssessed"],
+                  "source_mapping": ["第四脑室未见扩张", "第四脑室扩张"]
+                }
+              ]
+            }
+          ]
+        },
+
+        {
+          "name": "Posterior Fossa",
+          "type": "Group",
+          "entities": [
+            {
+              "name": "Cerebellum",
+              "schema_ref": "Brain - Cerebellum",
+              "fields": [
+                {
+                  "key": "tcd",
+                  "label": "小脑横径（TCD）",
+                  "type": "Measurement",
+                  "unit": "cm",
+                  "options": [],
+                  "source_mapping": ["最大横径", "小脑最大横径"]
+                },
+                {
+                  "key": "hemisphere_symmetry",
+                  "label": "小脑半球对称性",
+                  "type": "Enum",
+                  "unit": null,
+                  "options": ["Symmetric", "Asymmetric", "Indeterminate", "NotAssessed"],
+                  "source_mapping": ["小脑半球对称", "不对称", "左侧偏小"]
+                },
+                {
+                  "key": "hemisphere_morphology",
+                  "label": "小脑半球形态",
+                  "type": "Enum",
+                  "unit": null,
+                  "options": ["Normal", "Irregular", "Indeterminate", "NotAssessed"],
+                  "source_mapping": ["形态规则", "形态不规则"]
+                },
+                {
+                  "key": "hemisphere_signal",
+                  "label": "小脑半球信号",
+                  "type": "Enum",
+                  "unit": null,
+                  "options": ["Normal", "Heterogeneous", "AbnormalFocus", "NotAssessed"],
+                  "source_mapping": ["信号不均匀", "异常信号小结片影"]
+                }
+              ]
+            },
+            {
+              "name": "Cerebellar Vermis",
+              "schema_ref": "Brain - Vermis",
+              "fields": [
+                {
+                  "key": "vermis_status",
+                  "label": "小脑蚓部完整性/发育",
+                  "type": "Enum",
+                  "unit": null,
+                  "options": ["Normal", "Hypoplastic", "PartialAgenesis", "Agenesis", "Indeterminate", "NotAssessed"],
+                  "source_mapping": ["偏小", "缺如", "形态未见异常"]
+                },
+                {
+                  "key": "vermis_height",
+                  "label": "蚓部上下径",
+                  "type": "Measurement",
+                  "unit": "cm",
+                  "options": [],
+                  "source_mapping": ["上下径"]
+                },
+                {
+                  "key": "vermis_ap",
+                  "label": "蚓部前后径",
+                  "type": "Measurement",
+                  "unit": "cm",
+                  "options": [],
+                  "source_mapping": ["前后径"]
+                },
+                {
+                  "key": "tegmento_vermis_angle",
+                  "label": "蚓干角",
+                  "type": "Measurement",
+                  "unit": "°",
+                  "options": [],
+                  "source_mapping": ["蚓干角"]
+                },
+                {
+                  "key": "primary_fissure_visibility",
+                  "label": "原裂显示",
+                  "type": "Enum",
+                  "unit": null,
+                  "options": ["Clear", "Unclear", "NotVisible", "NotAssessed"],
+                  "source_mapping": ["原裂可见", "显示不清"]
+                }
+              ]
+            },
+            {
+              "name": "Cisterna Magna",
+              "schema_ref": "Brain - CisternaMagna",
+              "fields": [
+                {
+                  "key": "cm_width",
+                  "label": "枕大池/后颅窝池宽度",
+                  "type": "Measurement",
+                  "unit": "cm",
+                  "options": [],
+                  "source_mapping": ["颅后窝池宽约", "枕大池", "稍增宽", "不宽"]
+                },
+                {
+                  "key": "cm_status",
+                  "label": "枕大池/后颅窝池状态",
+                  "type": "Enum",
+                  "unit": null,
+                  "options": ["Normal", "MildlyWidened", "Widened", "NotAssessed"],
+                  "source_mapping": ["不宽", "稍增宽", "增宽"]
+                }
+              ]
+            },
+            {
+              "name": "Tentorium Cerebelli",
+              "schema_ref": "Brain - Tentorium",
+              "fields": [
+                {
+                  "key": "tentorium_position",
+                  "label": "小脑幕位置",
+                  "type": "Enum",
+                  "unit": null,
+                  "options": ["Normal", "Elevated", "Indeterminate", "NotAssessed"],
+                  "source_mapping": ["小脑幕", "抬高", "位置"]
+                }
+              ]
+            }
+          ]
+        },
+
+        {
+          "name": "Brainstem",
+          "type": "Group",
+          "entities": [
+            {
+              "name": "Brainstem",
+              "schema_ref": "Brain - Brainstem",
+              "fields": [
+                {
+                  "key": "morphology_signal",
+                  "label": "脑干形态与信号",
+                  "type": "Enum",
+                  "unit": null,
+                  "options": ["Normal", "Abnormal", "Indeterminate", "NotAssessed"],
+                  "source_mapping": ["脑干形态、信号未见明显异常", "异常"]
+                }
+              ]
+            }
+          ]
+        },
+
+        {
+          "name": "Skull",
+          "type": "Group",
+          "entities": [
+            {
+              "name": "Skull Bone",
+              "schema_ref": "Brain - Skull",
+              "fields": [
+                {
+                  "key": "skull_integrity",
+                  "label": "颅骨完整性",
+                  "type": "Enum",
+                  "unit": null,
+                  "options": ["Intact", "Defect", "Indeterminate", "NotAssessed"],
+                  "source_mapping": ["颅骨结构完整", "缺损"]
+                }
+              ]
+            }
+          ]
+        },
+
+        {
+          "name": "Abnormal Detail Modules (Conditional)",
+          "type": "Group",
+          "display_if": {
+            "path": "Brain/Brain Overall/Overall Assessment/overall_status",
+            "in": ["Abnormal", "Indeterminate"]
+          },
+          "entities": [
+            {
+              "name": "Posterior Fossa Cystic Lesion Detail",
+              "schema_ref": "Brain - PosteriorFossaCyst",
+              "fields": [
+                {
+                  "key": "pf_cyst_present",
+                  "label": "后颅窝囊性灶",
+                  "type": "Boolean",
+                  "unit": null,
+                  "options": [],
+                  "source_mapping": ["后颅窝囊性灶", "囊性灶", "蛛网膜囊肿"]
+                },
+                {
+                  "key": "pf_cyst_size_lwh",
+                  "label": "囊性灶大小（长×宽×高）",
+                  "type": "Text",
+                  "unit": null,
+                  "options": [],
+                  "source_mapping": ["2.0×1.7×2.7cm", "1.6x0.9cm"]
+                },
+                {
+                  "key": "pf_effect_on_bone",
+                  "label": "对枕骨/邻近结构影响（如压迹）",
+                  "type": "Text",
+                  "unit": null,
+                  "options": [],
+                  "source_mapping": ["枕骨压迹"]
+                },
+                {
+                  "key": "pf_impression_suggestion",
+                  "label": "倾向诊断/鉴别（如蛛网膜囊肿/Blake pouch等）",
+                  "type": "Enum",
+                  "unit": null,
+                  "options": ["ArachnoidCyst", "BlakePouchCyst", "DandyWalkerSpectrum", "Other", "Indeterminate"],
+                  "source_mapping": ["考虑蛛网膜囊肿", "Blake"]
+                }
+              ]
+            },
+            {
+              "name": "Vascular Abnormality Detail",
+              "schema_ref": "Brain - VascularAbnormality",
+              "fields": [
+                {
+                  "key": "vascular_abnormality_present",
+                  "label": "脑血管异常",
+                  "type": "Boolean",
+                  "unit": null,
+                  "options": [],
+                  "source_mapping": ["Galen静脉瘤", "动静脉瘘", "直窦", "窦汇", "横窦", "乙状窦"]
+                },
+                {
+                  "key": "suspected_type",
+                  "label": "可疑类型",
+                  "type": "Enum",
+                  "unit": null,
+                  "options": ["VeinOfGalenAneurysmalMalformation", "DuralAVF", "PialAVF", "Other", "Indeterminate"],
+                  "source_mapping": ["Galen静脉瘤", "脑动静脉瘘"]
+                },
+                {
+                  "key": "feeding_arteries",
+                  "label": "供血动脉描述（如MCA/ACA分支）",
+                  "type": "Text",
+                  "unit": null,
+                  "options": [],
+                  "source_mapping": ["大脑中动脉", "大脑前动脉"]
+                },
+                {
+                  "key": "drainage_veins",
+                  "label": "引流静脉/静脉窦描述",
+                  "type": "Text",
+                  "unit": null,
+                  "options": [],
+                  "source_mapping": ["引流静脉", "上矢状窦"]
+                },
+                {
+                  "key": "parenchymal_injury_suspected",
+                  "label": "脑实质继发损伤（缺血/出血等）",
+                  "type": "Enum",
+                  "unit": null,
+                  "options": ["None", "IschemicInjurySuspected", "HemorrhageSuspected", "Indeterminate", "NotAssessed"],
+                  "source_mapping": ["缺血性脑损伤", "条带样异常信号", "DWI受限"]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "name": "Face/Neck",
+      "type": "Section",
+      "children": [
+        {
+          "name": "Face/Neck Screening",
+          "type": "Group",
+          "entities": [
+            {
+              "name": "Face/Neck Summary",
+              "schema_ref": "FaceNeck - Summary",
+              "fields": [
+                {
+                  "key": "face_neck_status",
+                  "label": "面颈部总体评估",
+                  "type": "Enum",
+                  "unit": null,
+                  "options": ["Normal", "Abnormal", "NotAssessed"],
+                  "source_mapping": ["面部结构", "颈部结构", "颈部囊性灶"]
+                },
+                {
+                  "key": "face_neck_comment",
+                  "label": "面颈部描述（可选）",
+                  "type": "Text",
+                  "unit": null,
+                  "options": [],
+                  "source_mapping": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "name": "Spine",
+      "type": "Section",
+      "children": [
+        {
+          "name": "Spinal Cord",
+          "type": "Group",
+          "entities": [
+            {
+              "name": "Conus Medullaris",
+              "schema_ref": "Spine - Conus",
+              "fields": [
+                {
+                  "key": "conus_level",
+                  "label": "脊髓圆锥位置",
+                  "type": "Enum",
+                  "unit": null,
+                  "options": ["Normal", "LowLying", "Indeterminate", "NotAssessed"],
+                  "source_mapping": ["脊髓圆锥位置未见确切异常", "位于双肾下极水平"]
+                }
+              ]
+            },
+            {
+              "name": "Sacral Canal",
+              "schema_ref": "Spine - SacralCanal",
+              "fields": [
+                {
+                  "key": "sacral_canal_abnormality",
+                  "label": "骶管异常",
+                  "type": "Enum",
+                  "unit": null,
+                  "options": ["None", "CystSuspected", "MassSuspected", "Indeterminate", "NotAssessed"],
+                  "source_mapping": ["骶管未见扩张及占位", "骶管囊肿"]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "name": "Thorax",
+      "type": "Section",
+      "children": [
+        {
+          "name": "Diaphragm",
+          "type": "Group",
+          "entities": [
+            {
+              "name": "Diaphragm",
+              "schema_ref": "Thorax - Diaphragm",
+              "fields": [
+                {
+                  "key": "diaphragm_integrity",
+                  "label": "膈肌完整性",
+                  "type": "Enum",
+                  "unit": null,
+                  "options": ["Intact", "DefectOrHernia", "Indeterminate", "NotAssessed"],
+                  "source_mapping": ["膈肌结构清晰", "缺损", "膈疝"]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "name": "Abdomen",
+      "type": "Section",
+      "children": [
+        {
+          "name": "Abdomen Screening",
+          "type": "Group",
+          "entities": [
+            {
+              "name": "Abdomen Summary",
+              "schema_ref": "Abdomen - Summary",
+              "fields": [
+                {
+                  "key": "abdomen_status",
+                  "label": "腹部总体评估",
+                  "type": "Enum",
+                  "unit": null,
+                  "options": ["Normal", "Abnormal", "NotAssessed"],
+                  "source_mapping": ["腹部MR未见明确异常", "肝脾肾", "胃泡", "肠管"]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Digestive System",
+          "type": "Group",
+          "entities": [
+            {
+              "name": "Liver",
+              "schema_ref": "Abdomen - Liver",
+              "fields": [
+                {
+                  "key": "liver_morphology",
+                  "label": "肝脏形态/信号",
+                  "type": "Enum",
+                  "unit": null,
+                  "options": ["Normal", "Abnormal", "NotAssessed"],
+                  "source_mapping": ["肝形态大小信号未见明确异常"]
+                }
+              ]
+            },
+            {
+              "name": "Spleen",
+              "schema_ref": "Abdomen - Spleen",
+              "fields": [
+                {
+                  "key": "spleen_morphology",
+                  "label": "脾脏形态/信号",
+                  "type": "Enum",
+                  "unit": null,
+                  "options": ["Normal", "Abnormal", "NotAssessed"],
+                  "source_mapping": ["脾形态大小信号未见明确异常"]
+                }
+              ]
+            },
+            {
+              "name": "Gallbladder",
+              "schema_ref": "Abdomen - Gallbladder",
+              "fields": [
+                {
+                  "key": "gb_visibility",
+                  "label": "胆囊可见性",
+                  "type": "Enum",
+                  "unit": null,
+                  "options": ["Visible", "NotVisible", "NotAssessed"],
+                  "source_mapping": ["胆囊可见"]
+                }
+              ]
+            },
+            {
+              "name": "GI Tract",
+              "schema_ref": "Abdomen - GI",
+              "fields": [
+                {
+                  "key": "esophagus_upper_visibility",
+                  "label": "食道上段显示",
+                  "type": "Enum",
+                  "unit": null,
+                  "options": ["Visible", "NotVisible", "NotAssessed"],
+                  "source_mapping": ["食道上段显示"]
+                },
+                {
+                  "key": "stomach_bubble",
+                  "label": "胃泡",
+                  "type": "Enum",
+                  "unit": null,
+                  "options": ["Visible_Normal", "NotVisible", "Dilated", "NotAssessed"],
+                  "source_mapping": ["胃泡显示", "未见扩张"]
+                },
+                {
+                  "key": "small_bowel",
+                  "label": "小肠",
+                  "type": "Enum",
+                  "unit": null,
+                  "options": ["Visible_Normal", "Dilated", "NotAssessed"],
+                  "source_mapping": ["小肠显示", "未见扩张"]
+                },
+                {
+                  "key": "colon_rectum",
+                  "label": "结肠/直肠",
+                  "type": "Enum",
+                  "unit": null,
+                  "options": ["Visible_Normal", "Dilated", "NotAssessed"],
+                  "source_mapping": ["直肠及结肠显示", "未见明显扩张"]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Urinary System",
+          "type": "Group",
+          "entities": [
+            {
+              "name": "Kidneys",
+              "schema_ref": "Abdomen - Kidneys",
+              "fields": [
+                {
+                  "key": "kidneys_status",
+                  "label": "双肾形态/信号",
+                  "type": "Enum",
+                  "unit": null,
+                  "options": ["Normal", "Abnormal", "NotAssessed"],
+                  "source_mapping": ["双肾形态大小信号未见明确异常"]
+                }
+              ]
+            },
+            {
+              "name": "Bladder",
+              "schema_ref": "Abdomen - Bladder",
+              "fields": [
+                {
+                  "key": "bladder_distension",
+                  "label": "膀胱充盈",
+                  "type": "Enum",
+                  "unit": null,
+                  "options": ["Adequate", "Small", "Overdistended", "NotAssessed"],
+                  "source_mapping": ["膀胱充盈可"]
+                },
+                {
+                  "key": "bladder_wall",
+                  "label": "膀胱壁",
+                  "type": "Enum",
+                  "unit": null,
+                  "options": ["Smooth", "Irregular", "NotAssessed"],
+                  "source_mapping": ["壁光整"]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "name": "Placenta & Umbilical Cord",
+      "type": "Section",
+      "children": [
+        {
+          "name": "Placenta",
+          "type": "Group",
+          "entities": [
+            {
+              "name": "Placenta",
+              "schema_ref": "Placenta - Main",
+              "fields": [
+                {
+                  "key": "placenta_location",
+                  "label": "胎盘位置",
+                  "type": "Enum",
+                  "unit": null,
+                  "options": [
+                    "Anterior",
+                    "Posterior",
+                    "Fundal",
+                    "LateralLeft",
+                    "LateralRight",
+                    "Combined",
+                    "Previa",
+                    "Unknown"
+                  ],
+                  "source_mapping": ["胎盘位于子宫体前壁", "后壁", "宫底", "左侧壁", "右侧壁"]
+                },
+                {
+                  "key": "placenta_previa_type",
+                  "label": "前置胎盘类型（如有）",
+                  "type": "Enum",
+                  "unit": null,
+                  "options": ["None", "Marginal", "Partial", "Complete", "Indeterminate", "NotAssessed"],
+                  "source_mapping": ["前置胎盘", "部分型"]
+                },
+                {
+                  "key": "distance_to_internal_os",
+                  "label": "距宫颈内口距离（如有）",
+                  "type": "Measurement",
+                  "unit": "cm",
+                  "options": [],
+                  "source_mapping": ["距离宫颈内口"]
+                },
+                {
+                  "key": "placenta_signal_abnormality",
+                  "label": "胎盘信号异常",
+                  "type": "Enum",
+                  "unit": null,
+                  "options": ["Absent", "Present", "NotAssessed"],
+                  "source_mapping": ["信号不均", "片状高信号", "条片状低信号"]
+                },
+                {
+                  "key": "placenta_signal_description",
+                  "label": "胎盘信号描述（如有）",
+                  "type": "Text",
+                  "unit": null,
+                  "options": [],
+                  "source_mapping": ["BSSFP见片状高信号", "T2低信号条片"]
+                },
+                {
+                  "key": "accreta_signs",
+                  "label": "胎盘植入相关征象（如评估）",
+                  "type": "Enum",
+                  "unit": null,
+                  "options": ["Absent", "Suspected", "Indeterminate", "NotAssessed"],
+                  "source_mapping": ["分界不清", "肌层变薄"]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Umbilical Cord",
+          "type": "Group",
+          "entities": [
+            {
+              "name": "Umbilical Cord",
+              "schema_ref": "Cord - Main",
+              "fields": [
+                {
+                  "key": "nuchal_cord_presence",
+                  "label": "脐带绕颈征象",
+                  "type": "Enum",
+                  "unit": null,
+                  "options": ["Absent", "Present", "NotAssessed"],
+                  "source_mapping": ["脐带绕颈", "未见绕颈征象"]
+                },
+                {
+                  "key": "nuchal_cord_loops",
+                  "label": "绕颈圈数（如有）",
+                  "type": "Measurement",
+                  "unit": "loops",
+                  "options": [],
+                  "source_mapping": ["绕颈一周", "1周"]
+                },
+                {
+                  "key": "cord_insertion_site",
+                  "label": "脐带插入点（如描述）",
+                  "type": "Text",
+                  "unit": null,
+                  "options": [],
+                  "source_mapping": ["脐带插入点位于胎盘..."]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "name": "Impression",
+      "type": "Section",
+      "children": [
+        {
+          "name": "Impression Summary",
+          "type": "Group",
+          "entities": [
+            {
+              "name": "Impression",
+              "schema_ref": "Impression - Main",
+              "fields": [
+                {
+                  "key": "impression_items",
+                  "label": "影像诊断要点（列表）",
+                  "type": "Text",
+                  "unit": null,
+                  "options": [],
+                  "source_mapping": ["影像诊断"]
+                },
+                {
+                  "key": "recommendation",
+                  "label": "建议（如产前诊断咨询/复查）",
+                  "type": "Enum",
+                  "unit": null,
+                  "options": ["PrenatalCounseling", "FollowUpMRI", "FollowUpUS", "ClinicalCorrelation", "NoneSpecified"],
+                  "source_mapping": ["建议结合产前诊断咨询", "隔期复查"]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
