@@ -1,5 +1,5 @@
 # ASTAR: Automated induction of STAndardized radiology Reporting templates from large-scale clinical free-text corpora
-> ASTAR automatically induces standardized reporting templates from large-scale free-text medical corpora, replacing labor-intensive manual template design with a scalable data-driven pipeline.
+> ASTAR automatically induces standardized reporting templates from large-scale free-text medical corpora, replacing labor-intensive manual template design with a scalable data-driven pipeline. **👉 You could find our example template: [examples/ours_result.json](examples/ours_result.json)**  
 ## Overview
 
 ASTAR is a three-stage framework for automatically inducing structured reporting templates from large-scale free-text medical reports.
