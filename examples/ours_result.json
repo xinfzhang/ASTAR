@@ -16,15 +16,15 @@
               "fields": [
                 {
                   "key": "ga_weeks",
-                  "label": "孕周",
+                  "label": "gestational age",
                   "type": "Measurement",
                   "unit": "weeks",
                   "options": [],
-                  "source_mapping": ["妊娠", "孕周", "末次月经龄", "校正孕周"]
+                  "source_mapping": ["pregnancy", "gestational age", "gestational age by last menstrual period", "corrected gestational age"]
                 },
                 {
                   "key": "ga_plus_days",
-                  "label": "孕周+天（可选）",
+                  "label": "gestational age+days（optional）",
                   "type": "Text",
                   "unit": null,
                   "options": [],
@@ -38,7 +38,7 @@
               "fields": [
                 {
                   "key": "pregnancy_type",
-                  "label": "妊娠类型",
+                  "label": "pregnancy type",
                   "type": "Enum",
                   "unit": null,
                   "options": [
@@ -47,7 +47,7 @@
                     "Ectopic",
                     "Unknown"
                   ],
-                  "source_mapping": ["宫内妊娠", "单胎", "多胎"]
+                  "source_mapping": ["intrauterine pregnancy", "singleton", "multiple gestation"]
                 }
               ]
             },
@@ -57,7 +57,7 @@
               "fields": [
                 {
                   "key": "presentation",
-                  "label": "胎位",
+                  "label": "fetal presentation",
                   "type": "Enum",
                   "unit": null,
                   "options": [
@@ -67,7 +67,7 @@
                     "Oblique",
                     "Unknown"
                   ],
-                  "source_mapping": ["头位", "臀位", "横位", "斜位"]
+                  "source_mapping": ["cephalic presentation", "breech presentation", "transverse lie", "oblique lie"]
                 }
               ]
             }
@@ -83,35 +83,35 @@
               "fields": [
                 {
                   "key": "cervical_length",
-                  "label": "宫颈管长度",
+                  "label": "cervical canal length",
                   "type": "Measurement",
                   "unit": "cm",
                   "options": [],
-                  "source_mapping": ["宫颈管长约", "宫颈管长度"]
+                  "source_mapping": ["cervical canal length approximately", "cervical canal length"]
                 },
                 {
                   "key": "internal_os_status",
-                  "label": "宫颈内口",
+                  "label": "internal cervical os",
                   "type": "Enum",
                   "unit": null,
                   "options": ["Closed", "Dilated", "Indeterminate", "NotAssessed"],
-                  "source_mapping": ["宫颈内口", "扩张", "闭合"]
+                  "source_mapping": ["internal cervical os", "dilated", "closed"]
                 },
                 {
                   "key": "internal_os_dilation_width",
-                  "label": "内口扩张宽度（如有）",
+                  "label": "internal os dilation width（if present）",
                   "type": "Measurement",
                   "unit": "cm",
                   "options": [],
-                  "source_mapping": ["扩张宽度"]
+                  "source_mapping": ["dilation width"]
                 },
                 {
                   "key": "endocervical_bleeding",
-                  "label": "宫颈管内出血信号（如有）",
+                  "label": "hemorrhagic signal within the endocervical canal（if present）",
                   "type": "Enum",
                   "unit": null,
                   "options": ["Absent", "Minimal", "Obvious", "NotAssessed"],
-                  "source_mapping": ["少许出血", "出血"]
+                  "source_mapping": ["minimal hemorrhage", "hemorrhage"]
                 }
               ]
             },
@@ -121,11 +121,11 @@
               "fields": [
                 {
                   "key": "maternal_incidental_findings",
-                  "label": "母体偶发所见（如肾积水/子宫肌瘤等）",
+                  "label": "incidental maternal findings（for example, hydronephrosis/uterine fibroids, etc.）",
                   "type": "Text",
                   "unit": null,
                   "options": [],
-                  "source_mapping": ["母体右肾积水", "子宫肌瘤"]
+                  "source_mapping": ["maternal right hydronephrosis", "uterine fibroid"]
                 }
               ]
             }
@@ -148,19 +148,19 @@
               "fields": [
                 {
                   "key": "overall_status",
-                  "label": "总体评估",
+                  "label": "overall assessment",
                   "type": "Enum",
                   "unit": null,
                   "options": ["Normal", "Abnormal", "Indeterminate", "NotAssessed"],
-                  "source_mapping": ["未见明确异常", "考虑", "提示"]
+                  "source_mapping": ["no definite abnormality", "consider", "suggests"]
                 },
                 {
                   "key": "overall_comment",
-                  "label": "总体描述（可选）",
+                  "label": "overall description（optional）",
                   "type": "Text",
                   "unit": null,
                   "options": [],
-                  "source_mapping": ["脑部结构未见明确异常", "余胎儿脑部未见明确异常"]
+                  "source_mapping": ["no definite abnormality in the brain structures", "no definite abnormality in the remainder of the fetal brain"]
                 }
               ]
             }
@@ -177,43 +177,43 @@
               "fields": [
                 {
                   "key": "bpd_brain",
-                  "label": "脑双顶径（BPD）",
+                  "label": "brain biparietal diameter（BPD）",
                   "type": "Measurement",
                   "unit": "cm",
                   "options": [],
-                  "source_mapping": ["脑双顶径"]
+                  "source_mapping": ["brain biparietal diameter"]
                 },
                 {
                   "key": "bpd_skull",
-                  "label": "颅骨双顶径（BPD）",
+                  "label": "skull biparietal diameter（BPD）",
                   "type": "Measurement",
                   "unit": "cm",
                   "options": [],
-                  "source_mapping": ["颅骨双顶径", "骨双顶径"]
+                  "source_mapping": ["skull biparietal diameter", "bony biparietal diameter"]
                 },
                 {
                   "key": "fod_brain",
-                  "label": "脑额枕径（FOD）",
+                  "label": "brain fronto-occipital diameter（FOD）",
                   "type": "Measurement",
                   "unit": "cm",
                   "options": [],
-                  "source_mapping": ["脑额枕径", "额枕径"]
+                  "source_mapping": ["brain fronto-occipital diameter", "fronto-occipital diameter"]
                 },
                 {
                   "key": "fod_skull",
-                  "label": "颅骨额枕径（FOD）",
+                  "label": "skull fronto-occipital diameter（FOD）",
                   "type": "Measurement",
                   "unit": "cm",
                   "options": [],
-                  "source_mapping": ["颅骨额枕径", "骨额枕径"]
+                  "source_mapping": ["skull fronto-occipital diameter", "bony fronto-occipital diameter"]
                 },
                 {
                   "key": "head_circumference",
-                  "label": "头围（如有）",
+                  "label": "head circumference（if present）",
                   "type": "Measurement",
                   "unit": "cm",
                   "options": [],
-                  "source_mapping": ["头围"]
+                  "source_mapping": ["head circumference"]
                 }
               ]
             }
@@ -230,11 +230,11 @@
               "fields": [
                 {
                   "key": "symmetry",
-                  "label": "大脑半球对称性",
+                  "label": "cerebral hemisphere symmetry",
                   "type": "Enum",
                   "unit": null,
                   "options": ["Symmetric", "Asymmetric", "Indeterminate", "NotAssessed"],
-                  "source_mapping": ["双侧大脑半球对称", "不对称"]
+                  "source_mapping": ["bilateral cerebral hemispheres symmetric", "asymmetric"]
                 }
               ]
             },
@@ -244,19 +244,19 @@
               "fields": [
                 {
                   "key": "sulci_gyral_development",
-                  "label": "脑沟回发育/显示",
+                  "label": "sulcal and gyral development/visualization",
                   "type": "Enum",
                   "unit": null,
                   "options": ["Appropriate_for_GA", "Delayed", "Simplified", "NotAssessed"],
-                  "source_mapping": ["脑沟回显示", "显示明显", "较明显", "表浅", "偏少"]
+                  "source_mapping": ["sulcal and gyral visualization", "clearly visualized", "more obvious", "superficial", "slightly reduced"]
                 },
                 {
                   "key": "central_sulcus_visibility",
-                  "label": "中央沟可见性（如评估）",
+                  "label": "central sulcus visibility（for example, assessment）",
                   "type": "Enum",
                   "unit": null,
                   "options": ["Visible", "NotVisible", "Partial", "NotAssessed"],
-                  "source_mapping": ["中央沟可见", "中央沟显示", "尚未显示"]
+                  "source_mapping": ["central sulcus visible", "central sulcus visualization", "not yet visualized"]
                 }
               ]
             },
@@ -266,35 +266,35 @@
               "fields": [
                 {
                   "key": "signal_status",
-                  "label": "脑实质信号",
+                  "label": "brain parenchymal signal",
                   "type": "Enum",
                   "unit": null,
                   "options": ["Normal", "Abnormal", "Indeterminate", "NotAssessed"],
-                  "source_mapping": ["脑实质未见确切异常信号", "异常信号"]
+                  "source_mapping": ["no definite abnormal signal in the brain parenchyma", "abnormal signal"]
                 },
                 {
                   "key": "lamination",
-                  "label": "分层结构",
+                  "label": "laminar structure",
                   "type": "Enum",
                   "unit": null,
                   "options": ["Clear", "Blurred", "Absent", "NotAssessed"],
-                  "source_mapping": ["分层结构清晰", "不清", "未见"]
+                  "source_mapping": ["clear laminar structure", "unclear", "not seen"]
                 },
                 {
                   "key": "dwi_restriction",
-                  "label": "DWI弥散受限（如评估）",
+                  "label": "DWIrestricted diffusion（for example, assessment）",
                   "type": "Enum",
                   "unit": null,
                   "options": ["None", "Present", "NotAssessed"],
-                  "source_mapping": ["DWI弥散受限", "弥散受限"]
+                  "source_mapping": ["DWIrestricted diffusion", "restricted diffusion"]
                 },
                 {
                   "key": "extra_axial_space",
-                  "label": "脑外间隙",
+                  "label": "extra-axial space",
                   "type": "Enum",
                   "unit": null,
                   "options": ["Normal", "MildlyWidened", "Widened", "NotAssessed"],
-                  "source_mapping": ["脑外间隙稍增宽", "额颞部脑外间隙稍增宽"]
+                  "source_mapping": ["slightly widened extra-axial space", "slightly widened extra-axial space in the frontotemporal region"]
                 }
               ]
             }
@@ -311,11 +311,11 @@
               "fields": [
                 {
                   "key": "midline_centered",
-                  "label": "脑中线结构",
+                  "label": "midline brain structures",
                   "type": "Enum",
                   "unit": null,
                   "options": ["Centered", "Shifted", "Indeterminate", "NotAssessed"],
-                  "source_mapping": ["脑中线结构居中", "偏移"]
+                  "source_mapping": ["midline brain structures centered", "shifted"]
                 }
               ]
             },
@@ -325,27 +325,27 @@
               "fields": [
                 {
                   "key": "csp_visibility",
-                  "label": "透明隔/透明隔腔可见性",
+                  "label": "septum pellucidum/cavum septum pellucidum visibility",
                   "type": "Enum",
                   "unit": null,
                   "options": ["Visible", "NotVisible", "Partial", "NotAssessed"],
-                  "source_mapping": ["透明隔显示", "透明隔显示完整", "未见显示"]
+                  "source_mapping": ["septum pellucidum visualization", "septum pellucidum completely visualized", "not visualized"]
                 },
                 {
                   "key": "csp_integrity",
-                  "label": "透明隔完整性",
+                  "label": "septum pellucidum integrity",
                   "type": "Enum",
                   "unit": null,
                   "options": ["Intact", "NotIntact", "Indeterminate", "NotAssessed"],
-                  "source_mapping": ["显示完整", "连续", "不完整"]
+                  "source_mapping": ["completely visualized", "continuous", "incomplete"]
                 },
                 {
                   "key": "csp_width",
-                  "label": "透明隔腔宽度（如有）",
+                  "label": "cavum septum pellucidum width（if present）",
                   "type": "Measurement",
                   "unit": "cm",
                   "options": [],
-                  "source_mapping": ["透明隔腔宽约", "透明隔间腔宽约"]
+                  "source_mapping": ["cavum septum pellucidum width approximately", "cavum septi pellucidi width approximately"]
                 }
               ]
             },
@@ -355,27 +355,27 @@
               "fields": [
                 {
                   "key": "cc_visualization",
-                  "label": "胼胝体可见性",
+                  "label": "corpus callosum visibility",
                   "type": "Enum",
                   "unit": null,
                   "options": ["Visible", "Partial", "NotVisible", "NotAssessed"],
-                  "source_mapping": ["胼胝体显示", "未见确切显示"]
+                  "source_mapping": ["corpus callosum visualization", "not definitely visualized"]
                 },
                 {
                   "key": "cc_morphology",
-                  "label": "胼胝体形态",
+                  "label": "corpus callosum morphology",
                   "type": "Enum",
                   "unit": null,
                   "options": ["Normal", "Dysgenesis", "Agenesis", "Indeterminate", "NotAssessed"],
-                  "source_mapping": ["形态未见明确异常", "缺如", "发育不良"]
+                  "source_mapping": ["no definite morphological abnormality", "absent", "dysplasia"]
                 },
                 {
                   "key": "cc_length",
-                  "label": "胼胝体长度（如测量）",
+                  "label": "corpus callosum length（for example, measurement）",
                   "type": "Measurement",
                   "unit": "cm",
                   "options": [],
-                  "source_mapping": ["长度", "前后径"]
+                  "source_mapping": ["length", "anteroposterior diameter"]
                 }
               ]
             },
@@ -385,19 +385,19 @@
               "fields": [
                 {
                   "key": "olfactory_visualization",
-                  "label": "嗅球/嗅沟显示",
+                  "label": "olfactory bulb/olfactory sulcus visualization",
                   "type": "Enum",
                   "unit": null,
                   "options": ["Visible", "Partial", "NotVisible", "NotAssessed"],
-                  "source_mapping": ["嗅球及嗅沟显示", "可见", "不清"]
+                  "source_mapping": ["visualization of the olfactory bulbs and olfactory sulci", "visible", "unclear"]
                 },
                 {
                   "key": "olfactory_symmetry",
-                  "label": "嗅球/嗅沟对称性",
+                  "label": "olfactory bulb/olfactory sulcus symmetry",
                   "type": "Enum",
                   "unit": null,
                   "options": ["Symmetric", "Asymmetric", "Indeterminate", "NotAssessed"],
-                  "source_mapping": ["显示对称", "不对称"]
+                  "source_mapping": ["symmetrically visualized", "asymmetric"]
                 }
               ]
             },
@@ -407,11 +407,11 @@
               "fields": [
                 {
                   "key": "optic_chiasm_visibility",
-                  "label": "视交叉可见性（如评估）",
+                  "label": "optic chiasm visibility（for example, assessment）",
                   "type": "Enum",
                   "unit": null,
                   "options": ["Visible", "NotVisible", "NotAssessed"],
-                  "source_mapping": ["视交叉显示"]
+                  "source_mapping": ["optic chiasm visualization"]
                 }
               ]
             }
@@ -428,27 +428,27 @@
               "fields": [
                 {
                   "key": "atrium_width_left",
-                  "label": "左侧侧脑室三角区宽度",
+                  "label": "left atrial width of the lateral ventricle",
                   "type": "Measurement",
                   "unit": "cm",
                   "options": [],
-                  "source_mapping": ["左侧脑室三角区宽约", "左侧侧脑室"]
+                  "source_mapping": ["left ventricular atrial width approximately", "left lateral ventricle"]
                 },
                 {
                   "key": "atrium_width_right",
-                  "label": "右侧侧脑室三角区宽度",
+                  "label": "right atrial width of the lateral ventricle",
                   "type": "Measurement",
                   "unit": "cm",
                   "options": [],
-                  "source_mapping": ["右侧脑室三角区宽约", "右侧侧脑室"]
+                  "source_mapping": ["right ventricular atrial width approximately", "right lateral ventricle"]
                 },
                 {
                   "key": "ventriculomegaly",
-                  "label": "侧脑室扩张分级",
+                  "label": "lateral ventriculomegaly grading",
                   "type": "Enum",
                   "unit": null,
                   "options": ["Normal", "Mild", "Moderate", "Severe", "Indeterminate", "NotAssessed"],
-                  "source_mapping": ["轻度扩张", "未见扩张", "明显扩张", "增宽"]
+                  "source_mapping": ["mildly dilated", "no dilation", "markedly dilated", "widened"]
                 }
               ]
             },
@@ -458,11 +458,11 @@
               "fields": [
                 {
                   "key": "third_ventricle_dilation",
-                  "label": "第三脑室扩张",
+                  "label": "third ventricle dilated",
                   "type": "Enum",
                   "unit": null,
                   "options": ["Normal", "Dilated", "Indeterminate", "NotAssessed"],
-                  "source_mapping": ["第三脑室未见扩张", "第三脑室扩张"]
+                  "source_mapping": ["no dilation of the third ventricle", "third ventricle dilated"]
                 }
               ]
             },
@@ -472,11 +472,11 @@
               "fields": [
                 {
                   "key": "fourth_ventricle_dilation",
-                  "label": "第四脑室扩张",
+                  "label": "fourth ventricle dilated",
                   "type": "Enum",
                   "unit": null,
                   "options": ["Normal", "Dilated", "Indeterminate", "NotAssessed"],
-                  "source_mapping": ["第四脑室未见扩张", "第四脑室扩张"]
+                  "source_mapping": ["no dilation of the fourth ventricle", "fourth ventricle dilated"]
                 }
               ]
             }
@@ -493,35 +493,35 @@
               "fields": [
                 {
                   "key": "tcd",
-                  "label": "小脑横径（TCD）",
+                  "label": "transverse cerebellar diameter（TCD）",
                   "type": "Measurement",
                   "unit": "cm",
                   "options": [],
-                  "source_mapping": ["最大横径", "小脑最大横径"]
+                  "source_mapping": ["maximum transverse diameter", "maximum transverse cerebellar diameter"]
                 },
                 {
                   "key": "hemisphere_symmetry",
-                  "label": "小脑半球对称性",
+                  "label": "cerebellar hemisphere symmetry",
                   "type": "Enum",
                   "unit": null,
                   "options": ["Symmetric", "Asymmetric", "Indeterminate", "NotAssessed"],
-                  "source_mapping": ["小脑半球对称", "不对称", "左侧偏小"]
+                  "source_mapping": ["cerebellar hemispheres symmetric", "asymmetric", "slightly small on the left"]
                 },
                 {
                   "key": "hemisphere_morphology",
-                  "label": "小脑半球形态",
+                  "label": "cerebellar hemisphere morphology",
                   "type": "Enum",
                   "unit": null,
                   "options": ["Normal", "Irregular", "Indeterminate", "NotAssessed"],
-                  "source_mapping": ["形态规则", "形态不规则"]
+                  "source_mapping": ["regular morphology", "irregular morphology"]
                 },
                 {
                   "key": "hemisphere_signal",
-                  "label": "小脑半球信号",
+                  "label": "cerebellar hemisphere signal",
                   "type": "Enum",
                   "unit": null,
                   "options": ["Normal", "Heterogeneous", "AbnormalFocus", "NotAssessed"],
-                  "source_mapping": ["信号不均匀", "异常信号小结片影"]
+                  "source_mapping": ["uneven signal", "focal patchy abnormal signal"]
                 }
               ]
             },
@@ -531,43 +531,43 @@
               "fields": [
                 {
                   "key": "vermis_status",
-                  "label": "小脑蚓部完整性/发育",
+                  "label": "cerebellar vermis integrity/development",
                   "type": "Enum",
                   "unit": null,
                   "options": ["Normal", "Hypoplastic", "PartialAgenesis", "Agenesis", "Indeterminate", "NotAssessed"],
-                  "source_mapping": ["偏小", "缺如", "形态未见异常"]
+                  "source_mapping": ["slightly small", "absent", "no morphological abnormality"]
                 },
                 {
                   "key": "vermis_height",
-                  "label": "蚓部上下径",
+                  "label": "vermian superoinferior diameter",
                   "type": "Measurement",
                   "unit": "cm",
                   "options": [],
-                  "source_mapping": ["上下径"]
+                  "source_mapping": ["superoinferior diameter"]
                 },
                 {
                   "key": "vermis_ap",
-                  "label": "蚓部前后径",
+                  "label": "vermian anteroposterior diameter",
                   "type": "Measurement",
                   "unit": "cm",
                   "options": [],
-                  "source_mapping": ["前后径"]
+                  "source_mapping": ["anteroposterior diameter"]
                 },
                 {
                   "key": "tegmento_vermis_angle",
-                  "label": "蚓干角",
+                  "label": "tegmento-vermian angle",
                   "type": "Measurement",
                   "unit": "°",
                   "options": [],
-                  "source_mapping": ["蚓干角"]
+                  "source_mapping": ["tegmento-vermian angle"]
                 },
                 {
                   "key": "primary_fissure_visibility",
-                  "label": "原裂显示",
+                  "label": "calcarine fissure visualization",
                   "type": "Enum",
                   "unit": null,
                   "options": ["Clear", "Unclear", "NotVisible", "NotAssessed"],
-                  "source_mapping": ["原裂可见", "显示不清"]
+                  "source_mapping": ["calcarine fissure visible", "poorly visualized"]
                 }
               ]
             },
@@ -577,19 +577,19 @@
               "fields": [
                 {
                   "key": "cm_width",
-                  "label": "枕大池/后颅窝池宽度",
+                  "label": "cisterna magna/cisterna magna width",
                   "type": "Measurement",
                   "unit": "cm",
                   "options": [],
-                  "source_mapping": ["颅后窝池宽约", "枕大池", "稍增宽", "不宽"]
+                  "source_mapping": ["posterior fossa cistern width approximately", "cisterna magna", "slightly widened", "not widened"]
                 },
                 {
                   "key": "cm_status",
-                  "label": "枕大池/后颅窝池状态",
+                  "label": "cisterna magna/cisterna magna status",
                   "type": "Enum",
                   "unit": null,
                   "options": ["Normal", "MildlyWidened", "Widened", "NotAssessed"],
-                  "source_mapping": ["不宽", "稍增宽", "增宽"]
+                  "source_mapping": ["not widened", "slightly widened", "widened"]
                 }
               ]
             },
@@ -599,11 +599,11 @@
               "fields": [
                 {
                   "key": "tentorium_position",
-                  "label": "小脑幕位置",
+                  "label": "tentorial position",
                   "type": "Enum",
                   "unit": null,
                   "options": ["Normal", "Elevated", "Indeterminate", "NotAssessed"],
-                  "source_mapping": ["小脑幕", "抬高", "位置"]
+                  "source_mapping": ["tentorium cerebelli", "elevated", "location"]
                 }
               ]
             }
@@ -620,11 +620,11 @@
               "fields": [
                 {
                   "key": "morphology_signal",
-                  "label": "脑干形态与信号",
+                  "label": "brainstem morphology and signal",
                   "type": "Enum",
                   "unit": null,
                   "options": ["Normal", "Abnormal", "Indeterminate", "NotAssessed"],
-                  "source_mapping": ["脑干形态、信号未见明显异常", "异常"]
+                  "source_mapping": ["brainstem morphology、no obvious signal abnormality", "abnormal"]
                 }
               ]
             }
@@ -641,11 +641,11 @@
               "fields": [
                 {
                   "key": "skull_integrity",
-                  "label": "颅骨完整性",
+                  "label": "skull integrity",
                   "type": "Enum",
                   "unit": null,
                   "options": ["Intact", "Defect", "Indeterminate", "NotAssessed"],
-                  "source_mapping": ["颅骨结构完整", "缺损"]
+                  "source_mapping": ["skull structure intact", "defect"]
                 }
               ]
             }
@@ -666,15 +666,15 @@
               "fields": [
                 {
                   "key": "pf_cyst_present",
-                  "label": "后颅窝囊性灶",
+                  "label": "posterior fossa cystic lesion",
                   "type": "Boolean",
                   "unit": null,
                   "options": [],
-                  "source_mapping": ["后颅窝囊性灶", "囊性灶", "蛛网膜囊肿"]
+                  "source_mapping": ["posterior fossa cystic lesion", "cystic lesion", "arachnoid cyst"]
                 },
                 {
                   "key": "pf_cyst_size_lwh",
-                  "label": "囊性灶大小（长×宽×高）",
+                  "label": "cystic lesion size（length×width×high）",
                   "type": "Text",
                   "unit": null,
                   "options": [],
@@ -682,19 +682,19 @@
                 },
                 {
                   "key": "pf_effect_on_bone",
-                  "label": "对枕骨/邻近结构影响（如压迹）",
+                  "label": "to the occipital bone/effect on adjacent structures（for example, indentation）",
                   "type": "Text",
                   "unit": null,
                   "options": [],
-                  "source_mapping": ["枕骨压迹"]
+                  "source_mapping": ["occipital indentation"]
                 },
                 {
                   "key": "pf_impression_suggestion",
-                  "label": "倾向诊断/鉴别（如蛛网膜囊肿/Blake pouch等）",
+                  "label": "favored diagnosis/differential diagnosis（for example, arachnoid cyst/Blake pouchetc.）",
                   "type": "Enum",
                   "unit": null,
                   "options": ["ArachnoidCyst", "BlakePouchCyst", "DandyWalkerSpectrum", "Other", "Indeterminate"],
-                  "source_mapping": ["考虑蛛网膜囊肿", "Blake"]
+                  "source_mapping": ["consider arachnoid cyst", "Blake"]
                 }
               ]
             },
@@ -704,43 +704,43 @@
               "fields": [
                 {
                   "key": "vascular_abnormality_present",
-                  "label": "脑血管异常",
+                  "label": "cerebrovascular abnormality",
                   "type": "Boolean",
                   "unit": null,
                   "options": [],
-                  "source_mapping": ["Galen静脉瘤", "动静脉瘘", "直窦", "窦汇", "横窦", "乙状窦"]
+                  "source_mapping": ["Galenvenous aneurysm", "arteriovenous fistula", "straight sinus", "torcular herophili", "transverse sinus", "sigmoid sinus"]
                 },
                 {
                   "key": "suspected_type",
-                  "label": "可疑类型",
+                  "label": "suspected type",
                   "type": "Enum",
                   "unit": null,
                   "options": ["VeinOfGalenAneurysmalMalformation", "DuralAVF", "PialAVF", "Other", "Indeterminate"],
-                  "source_mapping": ["Galen静脉瘤", "脑动静脉瘘"]
+                  "source_mapping": ["Galenvenous aneurysm", "cerebral arteriovenous fistula"]
                 },
                 {
                   "key": "feeding_arteries",
-                  "label": "供血动脉描述（如MCA/ACA分支）",
+                  "label": "feeding artery description（ifMCA/ACAbranches）",
                   "type": "Text",
                   "unit": null,
                   "options": [],
-                  "source_mapping": ["大脑中动脉", "大脑前动脉"]
+                  "source_mapping": ["middle cerebral artery", "anterior cerebral artery"]
                 },
                 {
                   "key": "drainage_veins",
-                  "label": "引流静脉/静脉窦描述",
+                  "label": "drainage veins/venous sinus description",
                   "type": "Text",
                   "unit": null,
                   "options": [],
-                  "source_mapping": ["引流静脉", "上矢状窦"]
+                  "source_mapping": ["drainage veins", "superior sagittal sinus"]
                 },
                 {
                   "key": "parenchymal_injury_suspected",
-                  "label": "脑实质继发损伤（缺血/出血等）",
+                  "label": "secondary parenchymal injury（ischemia/hemorrhage, etc.）",
                   "type": "Enum",
                   "unit": null,
                   "options": ["None", "IschemicInjurySuspected", "HemorrhageSuspected", "Indeterminate", "NotAssessed"],
-                  "source_mapping": ["缺血性脑损伤", "条带样异常信号", "DWI受限"]
+                  "source_mapping": ["ischemic brain injury", "band-like abnormal signal", "DWIrestricted"]
                 }
               ]
             }
@@ -763,15 +763,15 @@
               "fields": [
                 {
                   "key": "face_neck_status",
-                  "label": "面颈部总体评估",
+                  "label": "overall face and neck assessment",
                   "type": "Enum",
                   "unit": null,
                   "options": ["Normal", "Abnormal", "NotAssessed"],
-                  "source_mapping": ["面部结构", "颈部结构", "颈部囊性灶"]
+                  "source_mapping": ["facial structures", "neck structures", "neck cystic lesion"]
                 },
                 {
                   "key": "face_neck_comment",
-                  "label": "面颈部描述（可选）",
+                  "label": "face and neck description（optional）",
                   "type": "Text",
                   "unit": null,
                   "options": [],
@@ -798,11 +798,11 @@
               "fields": [
                 {
                   "key": "conus_level",
-                  "label": "脊髓圆锥位置",
+                  "label": "conus medullaris position",
                   "type": "Enum",
                   "unit": null,
                   "options": ["Normal", "LowLying", "Indeterminate", "NotAssessed"],
-                  "source_mapping": ["脊髓圆锥位置未见确切异常", "位于双肾下极水平"]
+                  "source_mapping": ["no definite abnormality in conus medullaris position", "located at the level of the lower poles of both kidneys"]
                 }
               ]
             },
@@ -812,11 +812,11 @@
               "fields": [
                 {
                   "key": "sacral_canal_abnormality",
-                  "label": "骶管异常",
+                  "label": "sacral canal abnormality",
                   "type": "Enum",
                   "unit": null,
                   "options": ["None", "CystSuspected", "MassSuspected", "Indeterminate", "NotAssessed"],
-                  "source_mapping": ["骶管未见扩张及占位", "骶管囊肿"]
+                  "source_mapping": ["no dilation or mass seen in the sacral canal", "sacral canal cyst"]
                 }
               ]
             }
@@ -839,11 +839,11 @@
               "fields": [
                 {
                   "key": "diaphragm_integrity",
-                  "label": "膈肌完整性",
+                  "label": "diaphragm integrity",
                   "type": "Enum",
                   "unit": null,
                   "options": ["Intact", "DefectOrHernia", "Indeterminate", "NotAssessed"],
-                  "source_mapping": ["膈肌结构清晰", "缺损", "膈疝"]
+                  "source_mapping": ["diaphragmatic structure is clear", "defect", "diaphragmatic hernia"]
                 }
               ]
             }
@@ -866,11 +866,11 @@
               "fields": [
                 {
                   "key": "abdomen_status",
-                  "label": "腹部总体评估",
+                  "label": "overall abdominal assessment",
                   "type": "Enum",
                   "unit": null,
                   "options": ["Normal", "Abnormal", "NotAssessed"],
-                  "source_mapping": ["腹部MR未见明确异常", "肝脾肾", "胃泡", "肠管"]
+                  "source_mapping": ["abdomenMRno definite abnormality", "liver, spleen, and kidneys", "gastric bubble", "bowel loops"]
                 }
               ]
             }
@@ -886,11 +886,11 @@
               "fields": [
                 {
                   "key": "liver_morphology",
-                  "label": "肝脏形态/信号",
+                  "label": "liver morphology/signal",
                   "type": "Enum",
                   "unit": null,
                   "options": ["Normal", "Abnormal", "NotAssessed"],
-                  "source_mapping": ["肝形态大小信号未见明确异常"]
+                  "source_mapping": ["no definite abnormality in the liver morphology, size, or signal"]
                 }
               ]
             },
@@ -900,11 +900,11 @@
               "fields": [
                 {
                   "key": "spleen_morphology",
-                  "label": "脾脏形态/信号",
+                  "label": "spleen morphology/signal",
                   "type": "Enum",
                   "unit": null,
                   "options": ["Normal", "Abnormal", "NotAssessed"],
-                  "source_mapping": ["脾形态大小信号未见明确异常"]
+                  "source_mapping": ["no definite abnormality in the spleen morphology, size, or signal"]
                 }
               ]
             },
@@ -914,11 +914,11 @@
               "fields": [
                 {
                   "key": "gb_visibility",
-                  "label": "胆囊可见性",
+                  "label": "gallbladder visibility",
                   "type": "Enum",
                   "unit": null,
                   "options": ["Visible", "NotVisible", "NotAssessed"],
-                  "source_mapping": ["胆囊可见"]
+                  "source_mapping": ["gallbladder visible"]
                 }
               ]
             },
@@ -928,35 +928,35 @@
               "fields": [
                 {
                   "key": "esophagus_upper_visibility",
-                  "label": "食道上段显示",
+                  "label": "upper esophagus visualization",
                   "type": "Enum",
                   "unit": null,
                   "options": ["Visible", "NotVisible", "NotAssessed"],
-                  "source_mapping": ["食道上段显示"]
+                  "source_mapping": ["upper esophagus visualization"]
                 },
                 {
                   "key": "stomach_bubble",
-                  "label": "胃泡",
+                  "label": "gastric bubble",
                   "type": "Enum",
                   "unit": null,
                   "options": ["Visible_Normal", "NotVisible", "Dilated", "NotAssessed"],
-                  "source_mapping": ["胃泡显示", "未见扩张"]
+                  "source_mapping": ["gastric bubble visualization", "no dilation"]
                 },
                 {
                   "key": "small_bowel",
-                  "label": "小肠",
+                  "label": "small bowel",
                   "type": "Enum",
                   "unit": null,
                   "options": ["Visible_Normal", "Dilated", "NotAssessed"],
-                  "source_mapping": ["小肠显示", "未见扩张"]
+                  "source_mapping": ["small bowel visualization", "no dilation"]
                 },
                 {
                   "key": "colon_rectum",
-                  "label": "结肠/直肠",
+                  "label": "colon/rectum",
                   "type": "Enum",
                   "unit": null,
                   "options": ["Visible_Normal", "Dilated", "NotAssessed"],
-                  "source_mapping": ["直肠及结肠显示", "未见明显扩张"]
+                  "source_mapping": ["visualization of the rectum and colon", "no obvious dilation"]
                 }
               ]
             }
@@ -972,11 +972,11 @@
               "fields": [
                 {
                   "key": "kidneys_status",
-                  "label": "双肾形态/信号",
+                  "label": "renal morphology bilaterally/signal",
                   "type": "Enum",
                   "unit": null,
                   "options": ["Normal", "Abnormal", "NotAssessed"],
-                  "source_mapping": ["双肾形态大小信号未见明确异常"]
+                  "source_mapping": ["no definite abnormality in the morphology, size, or signal of both kidneys"]
                 }
               ]
             },
@@ -986,19 +986,19 @@
               "fields": [
                 {
                   "key": "bladder_distension",
-                  "label": "膀胱充盈",
+                  "label": "bladder distension",
                   "type": "Enum",
                   "unit": null,
                   "options": ["Adequate", "Small", "Overdistended", "NotAssessed"],
-                  "source_mapping": ["膀胱充盈可"]
+                  "source_mapping": ["bladder adequately distended"]
                 },
                 {
                   "key": "bladder_wall",
-                  "label": "膀胱壁",
+                  "label": "bladder wall",
                   "type": "Enum",
                   "unit": null,
                   "options": ["Smooth", "Irregular", "NotAssessed"],
-                  "source_mapping": ["壁光整"]
+                  "source_mapping": ["smooth wall"]
                 }
               ]
             }
@@ -1021,7 +1021,7 @@
               "fields": [
                 {
                   "key": "placenta_location",
-                  "label": "胎盘位置",
+                  "label": "placental location",
                   "type": "Enum",
                   "unit": null,
                   "options": [
@@ -1034,47 +1034,47 @@
                     "Previa",
                     "Unknown"
                   ],
-                  "source_mapping": ["胎盘位于子宫体前壁", "后壁", "宫底", "左侧壁", "右侧壁"]
+                  "source_mapping": ["placenta located on the anterior uterine wall", "posterior wall", "fundal", "left wall", "right wall"]
                 },
                 {
                   "key": "placenta_previa_type",
-                  "label": "前置胎盘类型（如有）",
+                  "label": "placenta previa type（if present）",
                   "type": "Enum",
                   "unit": null,
                   "options": ["None", "Marginal", "Partial", "Complete", "Indeterminate", "NotAssessed"],
-                  "source_mapping": ["前置胎盘", "部分型"]
+                  "source_mapping": ["placenta previa", "partial type"]
                 },
                 {
                   "key": "distance_to_internal_os",
-                  "label": "距宫颈内口距离（如有）",
+                  "label": "distance to the internal cervical os（if present）",
                   "type": "Measurement",
                   "unit": "cm",
                   "options": [],
-                  "source_mapping": ["距离宫颈内口"]
+                  "source_mapping": ["distance from the internal cervical os"]
                 },
                 {
                   "key": "placenta_signal_abnormality",
-                  "label": "胎盘信号异常",
+                  "label": "placental signal abnormality",
                   "type": "Enum",
                   "unit": null,
                   "options": ["Absent", "Present", "NotAssessed"],
-                  "source_mapping": ["信号不均", "片状高信号", "条片状低信号"]
+                  "source_mapping": ["heterogeneous signal", "patchy high signal", "streaky low signal"]
                 },
                 {
                   "key": "placenta_signal_description",
-                  "label": "胎盘信号描述（如有）",
+                  "label": "placental signal description（if present）",
                   "type": "Text",
                   "unit": null,
                   "options": [],
-                  "source_mapping": ["BSSFP见片状高信号", "T2低信号条片"]
+                  "source_mapping": ["BSSFPpatchy high signal seen", "T2low-signal band-like areas"]
                 },
                 {
                   "key": "accreta_signs",
-                  "label": "胎盘植入相关征象（如评估）",
+                  "label": "placenta accreta spectrum signs（for example, assessment）",
                   "type": "Enum",
                   "unit": null,
                   "options": ["Absent", "Suspected", "Indeterminate", "NotAssessed"],
-                  "source_mapping": ["分界不清", "肌层变薄"]
+                  "source_mapping": ["ill-defined boundary", "myometrial thinning"]
                 }
               ]
             }
@@ -1090,27 +1090,27 @@
               "fields": [
                 {
                   "key": "nuchal_cord_presence",
-                  "label": "脐带绕颈征象",
+                  "label": "sign of nuchal cord",
                   "type": "Enum",
                   "unit": null,
                   "options": ["Absent", "Present", "NotAssessed"],
-                  "source_mapping": ["脐带绕颈", "未见绕颈征象"]
+                  "source_mapping": ["nuchal cord", "no nuchal cord sign"]
                 },
                 {
                   "key": "nuchal_cord_loops",
-                  "label": "绕颈圈数（如有）",
+                  "label": "number of nuchal cord loops（if present）",
                   "type": "Measurement",
                   "unit": "loops",
                   "options": [],
-                  "source_mapping": ["绕颈一周", "1周"]
+                  "source_mapping": ["one loop around the neck", "1weeks"]
                 },
                 {
                   "key": "cord_insertion_site",
-                  "label": "脐带插入点（如描述）",
+                  "label": "umbilical cord insertion site（for example, description）",
                   "type": "Text",
                   "unit": null,
                   "options": [],
-                  "source_mapping": ["脐带插入点位于胎盘..."]
+                  "source_mapping": ["umbilical cord insertion site located on the placenta..."]
                 }
               ]
             }
@@ -1133,19 +1133,19 @@
               "fields": [
                 {
                   "key": "impression_items",
-                  "label": "影像诊断要点（列表）",
+                  "label": "key imaging findings（list）",
                   "type": "Text",
                   "unit": null,
                   "options": [],
-                  "source_mapping": ["影像诊断"]
+                  "source_mapping": ["imaging diagnosis"]
                 },
                 {
                   "key": "recommendation",
-                  "label": "建议（如产前诊断咨询/复查）",
+                  "label": "recommendation（for example, prenatal diagnostic counseling/follow-up）",
                   "type": "Enum",
                   "unit": null,
                   "options": ["PrenatalCounseling", "FollowUpMRI", "FollowUpUS", "ClinicalCorrelation", "NoneSpecified"],
-                  "source_mapping": ["建议结合产前诊断咨询", "隔期复查"]
+                  "source_mapping": ["recommend correlation with prenatal diagnostic counseling", "interval follow-up"]
                 }
               ]
             }
